@@ -1,0 +1,154 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .table-box { fill: #e6f3ff; stroke: #4a90e2; stroke-width: 2; }
+      .table-header { fill: #4a90e2; }
+      .table-text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .header-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: white; }
+      .relationship-line { stroke: #666; stroke-width: 2; fill: none; }
+      .relationship-text { font-family: Arial, sans-serif; font-size: 10px; fill: #666; }
+    </style>
+  </defs>
+
+  <!-- PATIENT Table (Top Left) -->
+  <g id="patient">
+    <rect class="table-box" x="50" y="50" width="180" height="140"/>
+    <rect class="table-header" x="50" y="50" width="180" height="25"/>
+    <text class="header-text" x="140" y="67" text-anchor="middle">PATIENT</text>
+    <text class="table-text" x="55" y="85">PatientID (PK)</text>
+    <text class="table-text" x="55" y="100">FirstName</text>
+    <text class="table-text" x="55" y="115">LastName</text>
+    <text class="table-text" x="55" y="130">DateOfBirth</text>
+    <text class="table-text" x="55" y="145">Gender</text>
+    <text class="table-text" x="55" y="160">Address</text>
+    <text class="table-text" x="55" y="175">Phone</text>
+  </g>
+
+  <!-- DEPARTMENT Table (Top Center) -->
+  <g id="department">
+    <rect class="table-box" x="350" y="50" width="180" height="110"/>
+    <rect class="table-header" x="350" y="50" width="180" height="25"/>
+    <text class="header-text" x="440" y="67" text-anchor="middle">DEPARTMENT</text>
+    <text class="table-text" x="355" y="85">DepartmentID (PK)</text>
+    <text class="table-text" x="355" y="100">DepartmentName</text>
+    <text class="table-text" x="355" y="115">Location</text>
+    <text class="table-text" x="355" y="130">HeadOfDepartment</text>
+    <text class="table-text" x="355" y="145">PhoneNumber</text>
+  </g>
+
+  <!-- DOCTOR Table (Top Right) -->
+  <g id="doctor">
+    <rect class="table-box" x="650" y="50" width="180" height="140"/>
+    <rect class="table-header" x="650" y="50" width="180" height="25"/>
+    <text class="header-text" x="740" y="67" text-anchor="middle">DOCTOR</text>
+    <text class="table-text" x="655" y="85">DoctorID (PK)</text>
+    <text class="table-text" x="655" y="100">FirstName</text>
+    <text class="table-text" x="655" y="115">LastName</text>
+    <text class="table-text" x="655" y="130">Specialization</text>
+    <text class="table-text" x="655" y="145">DepartmentID (FK)</text>
+    <text class="table-text" x="655" y="160">Phone</text>
+    <text class="table-text" x="655" y="175">Email</text>
+  </g>
+
+  <!-- ROOM Table (Middle Left) -->
+  <g id="room">
+    <rect class="table-box" x="50" y="300" width="180" height="110"/>
+    <rect class="table-header" x="50" y="300" width="180" height="25"/>
+    <text class="header-text" x="140" y="317" text-anchor="middle">ROOM</text>
+    <text class="table-text" x="55" y="335">RoomID (PK)</text>
+    <text class="table-text" x="55" y="350">RoomNumber</text>
+    <text class="table-text" x="55" y="365">RoomType</text>
+    <text class="table-text" x="55" y="380">DepartmentID (FK)</text>
+    <text class="table-text" x="55" y="395">Status</text>
+  </g>
+
+  <!-- APPOINTMENT Table (Middle Center) -->
+  <g id="appointment">
+    <rect class="table-box" x="350" y="300" width="180" height="140"/>
+    <rect class="table-header" x="350" y="300" width="180" height="25"/>
+    <text class="header-text" x="440" y="317" text-anchor="middle">APPOINTMENT</text>
+    <text class="table-text" x="355" y="335">AppointmentID (PK)</text>
+    <text class="table-text" x="355" y="350">PatientID (FK)</text>
+    <text class="table-text" x="355" y="365">DoctorID (FK)</text>
+    <text class="table-text" x="355" y="380">AppointmentDate</text>
+    <text class="table-text" x="355" y="395">AppointmentTime</text>
+    <text class="table-text" x="355" y="410">Status</text>
+    <text class="table-text" x="355" y="425">RoomID (FK)</text>
+  </g>
+
+  <!-- ADMISSION Table (Bottom Left) -->
+  <g id="admission">
+    <rect class="table-box" x="50" y="550" width="180" height="140"/>
+    <rect class="table-header" x="50" y="550" width="180" height="25"/>
+    <text class="header-text" x="140" y="567" text-anchor="middle">ADMISSION</text>
+    <text class="table-text" x="55" y="585">AdmissionID (PK)</text>
+    <text class="table-text" x="55" y="600">PatientID (FK)</text>
+    <text class="table-text" x="55" y="615">DoctorID (FK)</text>
+    <text class="table-text" x="55" y="630">RoomID (FK)</text>
+    <text class="table-text" x="55" y="645">AdmissionDate</text>
+    <text class="table-text" x="55" y="660">DischargeDate</text>
+    <text class="table-text" x="55" y="675">Status</text>
+  </g>
+
+  <!-- ADMISSION_AUDIT Table (Bottom Center) -->
+  <g id="admission_audit">
+    <rect class="table-box" x="350" y="550" width="180" height="140"/>
+    <rect class="table-header" x="350" y="550" width="180" height="25"/>
+    <text class="header-text" x="440" y="567" text-anchor="middle">ADMISSION_AUDIT</text>
+    <text class="table-text" x="355" y="585">AuditID (PK)</text>
+    <text class="table-text" x="355" y="600">AdmissionID (FK)</text>
+    <text class="table-text" x="355" y="615">Action</text>
+    <text class="table-text" x="355" y="630">Timestamp</text>
+    <text class="table-text" x="355" y="645">UserID</text>
+    <text class="table-text" x="355" y="660">OldValues</text>
+    <text class="table-text" x="355" y="675">NewValues</text>
+  </g>
+
+  <!-- Relationships with cleaner paths -->
+  
+  <!-- Department to Doctor -->
+  <path class="relationship-line" d="M 530 105 L 650 105"/>
+  <text class="relationship-text" x="580" y="100">1</text>
+  <text class="relationship-text" x="640" y="100">M</text>
+
+  <!-- Department to Room -->
+  <path class="relationship-line" d="M 350 160 L 290 160 L 290 355 L 230 355"/>
+  <text class="relationship-text" x="320" y="155">1</text>
+  <text class="relationship-text" x="240" y="350">M</text>
+
+  <!-- Patient to Appointment -->
+  <path class="relationship-line" d="M 230 120 L 290 120 L 290 370 L 350 370"/>
+  <text class="relationship-text" x="250" y="115">1</text>
+  <text class="relationship-text" x="340" y="365">M</text>
+
+  <!-- Doctor to Appointment -->
+  <path class="relationship-line" d="M 650 190 L 600 190 L 600 370 L 530 370"/>
+  <text class="relationship-text" x="620" y="185">1</text>
+  <text class="relationship-text" x="540" y="365">M</text>
+
+  <!-- Room to Appointment -->
+  <path class="relationship-line" d="M 230 355 L 350 355"/>
+  <text class="relationship-text" x="270" y="350">1</text>
+  <text class="relationship-text" x="340" y="350">M</text>
+
+  <!-- Patient to Admission -->
+  <path class="relationship-line" d="M 140 190 L 140 250 L 270 250 L 270 620 L 230 620"/>
+  <text class="relationship-text" x="145" y="220">1</text>
+  <text class="relationship-text" x="240" y="615">M</text>
+
+  <!-- Doctor to Admission -->
+  <path class="relationship-line" d="M 650 190 L 25 190 L 25 620 L 50 620"/>
+  <text class="relationship-text" x="330" y="185">1</text>
+  <text class="relationship-text" x="45" y="615">M</text>
+
+  <!-- Room to Admission -->
+  <path class="relationship-line" d="M 140 410 L 140 550"/>
+  <text class="relationship-text" x="145" y="470">1</text>
+  <text class="relationship-text" x="145" y="540">M</text>
+
+  <!-- Admission to Admission_Audit -->
+  <path class="relationship-line" d="M 230 620 L 350 620"/>
+  <text class="relationship-text" x="270" y="615">1</text>
+  <text class="relationship-text" x="340" y="615">M</text>
+
+</svg>
